@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        display: none;
+        width: 800px;
+        height: 500px;
+        border: 2px solid blue;
+      }
+      .active {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warning">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <div class="content" style="display: block;">111</div>
+      <div class="content">222</div>
+      <div class="content">333</div>
+    </div>
+    <script>
+      var btn = document.getElementsByTagName("button");
+      var div = document.getElementsByClassName("content");
+      for (var i = 0; i < btn.length; i++) {
+        (function (n) {
+          btn[n].onclick = function () {
+            for (var j = 0; j < btn.length; j++) {
+              btn[j].className = "";
+              div[j].style.display = "none";
+            }
+            this.className = "active";
+            div[n].style.display = "block";
+          };
+        })(i);
+      }
+    </script>
+  </body>
+</html>

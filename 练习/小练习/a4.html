@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+    }
+    .nav{
+      height: 50px;
+      background-color: red;
+    }
+    .main{
+      display: flex;
+      flex-direction: row;
+      flex: 1 0 800px;
+    }
+    .main .left{
+      flex: 0 0 100px;
+      order: -1;
+      background-color: saddlebrown;
+    }
+    .main .button{
+      flex: 1;
+      background-color: sandybrown;
+    }
+    .main .right{
+      flex: 0 0 100px;
+      background-color: skyblue;
+    }
+    .boot{
+      height: 50px;
+      background-color: rosybrown;
+    }
+    @media(max-width: 700px){
+      .main{
+        flex-direction: column;
+        flex: 1 0 800px;
+      }
+      .main .left{
+        flex: 0 0 100px;
+        order: -1;
+        background-color: saddlebrown;
+      }
+      .main .button{
+        flex: 1;
+        background-color: sandybrown;
+      }
+      .main .right{
+        flex: 0 0 100px;
+        background-color: skyblue;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="nav">头</div>
+    <div class="main">
+      <div class="button">中间</div>
+      <div class="left">左</div>
+      <div class="right">右</div>
+    </div>
+    <div class="boot">底部</div>
+</body>
+</html>

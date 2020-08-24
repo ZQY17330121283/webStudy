@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>date</title>
+</head>
+<body>
+  <input type="text" id="min" value="0">
+  <input type="text" id="second" value="0">
+    <script>
+      var min = document.getElementById("min");
+      var second = document.getElementById("second");
+      var timer = setInterval(function(){
+          second.value++;//秒自增
+          if(second.value == 10) {//当秒=10的时候
+            second.value = 0;//秒归0
+            min.value++;//分自增
+          }
+          if(min.value == 5){//当分=5
+            clearInterval(timer);//停止计时器
+          }
+        },1000)
+      // var date = new Date();
+      // console.log(date.getDate());
+      // console.log(date.getDay());
+      // console.log(date.getMonth());
+      // console.log(date.getFullYear());
+      // console.log(date.getHours());
+      // console.log(date.getMinutes());
+      // console.log(date.getSeconds());
+      // console.log(date.getUTCMilliseconds());
+      // console.log(date.getTime());
+      // function myDate() {
+      //   var date = new Date();
+      //   console.log("当前是" + date.getFullYear() + "年" + (date.getMonth() + 1)
+      //     + "月" + date.getDate() + "日" + date.getHours() + "时" + date.getMinutes() + "分" + date.getSeconds() + "秒");
+      // }     
+      // console.log(myDate());
+      // setTimeout(
+      //   function(){
+      //     console.log("a");
+      //   },5000)
+    </script>
+</body>
+</html>

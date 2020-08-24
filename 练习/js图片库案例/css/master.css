@@ -1,0 +1,11 @@
+ul{
+  list-style-type: none;
+}
+li{
+  float: left;
+  margin-left: 20px;
+}
+img{
+  display: block;
+  clear: both;
+}

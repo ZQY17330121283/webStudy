@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+  <h1>javascript图片库案例练习</h1>
+  <ul>
+    <!-- 事件处理函数
+          onclick单击
+          onmouseover 鼠标滑入 悬停
+          onmouseout  鼠标离开
+
+          关键字
+          this 这个对象
+
+          语句:onclick="  showPic(this);    return false;
+          解析:单击事件    这个对象返回参数     防止用户被带到目标链接窗口
+    -->
+    <li><a href="images/beauty_1587558747527.jpeg" title="图片1" onclick="showPic(this);return false;">图片1</a></li>
+    <li><a href="images/IMG_0988.jpeg" title="图片2" onclick="showPic(this);return false;">图片2</a></li>
+    <li><a href="images/IMG_1212.jpeg" title="图片3" onclick="showPic(this);return false;">图片3</a></li>
+    <li><a href="images/IMG_1260.jpeg" title="图片4" onclick="showPic(this);return false;">图片4</a></li>
+  </ul>
+  <img id="placeholder" src="images/IMG_1212.jpeg" width="300px" alt="">
+  <p id="description">图片3</p>
+  <script src="js/showPic.js"></script>
+</body>
+</html>

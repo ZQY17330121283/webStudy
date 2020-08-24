@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script>
+    var str = "abc";
+    str += 1;
+    var test = typeof(str);
+    if(test.length == 6){
+      test.sign = "typeof"
+    }
+    console.log(test.sign);
+  
+
+    
+    var div = document.getElementsByTagName('div')[0];
+    div.style.width = "100px";
+    div.style.height = "200px";
+    div.style.backgroundColor = "red";
+    //单击一次变样式
+    // div.onclick = function(){
+    //   this.style.backgroundColor="green";
+    //   this.style.width = "500px"
+    //   this.style.height = "500px"
+    //   this.style.borderRadius = "20%"
+    // }
+
+    //点一次变一个颜色  
+    // 原理： 计数器 取模
+    var count = 0;
+    div.onclick = function(){
+      count++;
+      if(count % 3 == 1){
+        this.style.backgroundColor = "blue";
+      }else if(count %3 == 2){
+        this.style.backgroundColor = "yellow"
+      }else if(count %3 == 0){
+        this.style.backgroundColor = "green"
+      }
+    }
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.nav{
+  text-align: center;
+  background-color: blanchedalmond;
+}
+.main .button{
+  background-color: burlywood;
+}
+.main .left{
+  background-color: aquamarine;
+}
+.main .right{
+  background-color: darkgrey;
+}
+.wei{
+  text-align: center;
+  background-color: darkgoldenrod;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  display: flex;
+  flex: 1;
+}
+.main .button{
+  flex: 1;
+}
+.main .left, .main .right{
+  flex: 0 0 50px;
+}
+.main .left{
+  order: -1;
+}
+@media (max-width: 500px){
+  .main{
+    flex-direction: column;
+    flex: 1;
+  }
+  .main .button{
+    flex: 1;
+  }
+  .main .left, .main .right{
+    flex: 0 0 20px;
+  }
+}

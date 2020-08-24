@@ -1,0 +1,82 @@
+/*   样式重置  */
+body,p,h1,h2,h3,h4,h5,h6{   /* 需要用的标签  重置*/
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img{
+    border: none;   /*  ie 才有效果 */
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+    color: #3c3c3c;    /* 淘宝灰 */
+}
+i{
+    font-style: normal;
+}
+input{
+    margin: 0;
+    padding: 0;
+}
+button{
+    outline: none;  /* 选择焦点 */
+}
+body{
+    font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    /* font: 12px/1.5  字体大小12px  行高1.5          行高可以给5种值:关键字，数字，百分比，px，em
+    tahoma,arial,'Hiragino Sans GB',    字体
+    '\5b8b\4f53'   万国码  宋体
+    ,sans-serif;         */
+    coloe: #3c3c3c;
+    background-color: #f4f4f4;
+}
+.cervix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.layer{
+    width: 1190px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+/* 下面试预定义样式 */
+.c4{
+    color: #f40;
+}
+.c5{
+    color: #f50;
+}
+.mr7{
+    margin-right: 7px;
+}
+.mr5{
+    margin-right: 5px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.mr10{
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+

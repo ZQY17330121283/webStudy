@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4170583b-05a9-433c-8258-d59c04b2e0a2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="淘宝实例" />
+  </component>
+  <component name="ProjectId" id="1Xsnn5eTZytoxdDSVD4SWkPNZMp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/JAVA EE作业" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/淘宝实例/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4170583b-05a9-433c-8258-d59c04b2e0a2" name="Default Changelist" comment="" />
+      <created>1581660013416</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581660013416</updated>
+      <workItem from="1581660014686" duration="2446000" />
+      <workItem from="1581839995852" duration="79000" />
+      <workItem from="1581840184563" duration="15000" />
+      <workItem from="1581843839170" duration="195000" />
+      <workItem from="1581844185291" duration="45000" />
+      <workItem from="1581844244358" duration="32000" />
+      <workItem from="1581915797168" duration="10649000" />
+      <workItem from="1582004156120" duration="3473000" />
+      <workItem from="1582093483758" duration="4360000" />
+      <workItem from="1582696782591" duration="694000" />
+      <workItem from="1582697525121" duration="3121000" />
+      <workItem from="1582881686731" duration="37000" />
+      <workItem from="1582881894958" duration="272000" />
+      <workItem from="1582959819487" duration="79000" />
+      <workItem from="1582959949056" duration="5000" />
+      <workItem from="1582960091804" duration="3000" />
+      <workItem from="1582960161120" duration="30000" />
+      <workItem from="1583841658999" duration="192000" />
+      <workItem from="1583894522881" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581915842090">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581915842090" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1581915843967">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581915843967" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1582095487730">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582095487730" />
+    <state x="572" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1581916126161">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="572" y="246" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581916126161" />
+  </component>
+</project>

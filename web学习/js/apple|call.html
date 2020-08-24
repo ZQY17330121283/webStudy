@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>call</p>
+  <script>
+    function Person(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    function Student(name,age,sex,tel,grade){
+      Person.call(this,name,age,sex);
+      this.tel = tel;
+      this.grade = grade;
+    }
+    var student = new Student('sunny',123,'male',139,2017);
+    // 这个 call 的作用只有一个，就是改变 this 指向，那 么就倒出来借用别人的函数来实现自己的功能，
+    // 你 Person.call()他就一定会执行 Person，然而里边传了一个 this，我们在外边 new 了，那么这个 this 就代表 student，
+    // 我们再来看 Student 这个函数，预编译第三步的时候实参和形参就相互统一了，
+    // 而预 编译发生在函数执行的前一刻，等于说执行第一句 Person.call(this,name,age,sex); 的时候 
+    // Student 里的形参已经有值了，所以第一句 call 括号里拿的是 Student 传好的 形参，
+    // 是具体的值，然后在把他作为实参传到 Person 里，然后利用 Person 的方法实 现了自己的一个封装，
+    // 其实 call 写在那里就相当于把 Person 里边的三条语句拿到 Student 里了。
+    // 封装后 student 里就有 name、age 和 sex 了，再执行自己的两行，加上 tel 和 grade。
+    // 完事后我们访问 student 就得到 Student{name: "sunny", age: 123, sex: "male", tel: 139, grade: 2017}。
+    // 但是这里你自己的需求必须完全涵盖人家的需求， 比如说你不想用 sex 那是不行的，你用 call 了，那么这三条语句一定会走下来。
+      
+
+      function Wheel(wheelSize,style) {
+        this.wheelSize = wheelSize;
+        this.style = style;
+      }
+      function Sit(c,sitColor) {
+        this.c = c;
+        this.sitColor = sitColor;
+      }
+      function Model(height,width,len) {
+        this.height = height;
+        this.width = width;
+        this.len = len;
+      }
+      function Car(wheelSize,style,c,sitColor,height,width,len) {
+        Wheel.call(this,wheelSize,style); 
+        Sit.call(this,c,sitColor); 
+        Model.call(this,height,width,len);
+      }
+      var car = new Car(100,"花里胡哨的","真皮","red",1800,1900,4900);
+      // 访问 car 就是 Car{wheelSize: 100, style: " 花里胡哨的",c:"真皮",sitColor:"red",height:1800, ...}，
+      // 但是构造函数Car 里边一行都没有写，都是用的别人的零件，在开发的时候也是一样的，有的时候把零 件都给你写好了，你直接用就可以了。
+  </script>
+  <p>apple</p>
+  <script>
+    function Person(name,age,sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    } 
+    function Student(name,age,sex,tel,grade) {
+      Person.apply(this,[name,age,sex]); 
+      this.tel = tel;
+      this.grade = grade;
+    }
+    var student = new Student('sunny',123,'male',139,2018); 
+    // 其实非常简单，arguments 是数组，那么就直接加一个[]就行了，但是记住 this 不能 加在里边。
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.box {
+  transition: border 2s;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+.box:hover {
+  border: 20px solid black;
+}

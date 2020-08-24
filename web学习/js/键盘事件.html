@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>键盘事件</title>
+</head>
+<body>
+  <script>
+    document.onkeypress = function () { //按下并松开 只能检测字符类案件
+      console.log("按下并松开"); 
+    }
+    document.onkeydown = function () { //按下
+      console.log("按下");
+    }
+    document.onkeyup = function () { //松开
+      console.log("松开"); 
+    }
+    document.onkeypress = function (e) {  //按那个按键 显示哪个
+      console.log(String.fromCharCode(e.charCode));
+    }
+  </script>
+</body>
+</html>
