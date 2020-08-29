@@ -1,0 +1,26 @@
+<script>
+  //对象解构  对象不按顺序，变量必须和属性同名
+  const test = {
+    //信息来源test
+    name: "赵同学",
+    age: 18,
+    aiHao: {
+      aiHao1: "逛B站",
+      aiHao2: "崩坏3",
+      aiHao3: "穿越火线",
+    },
+  };
+  const {
+    //创建4个变量
+    name: myName = "不详", //当没有这个值时默认显示不详
+    age = "0", //当没有这个值时默认显示0
+    aiHao: { aiHao1 },
+    aiHao: { aiHao2 },
+    aiHao: { aiHao3 },
+  } = test; //变量的值来自test
+  console.log(myName, age, aiHao1, aiHao2, aiHao3); //打印
+  //数组解构 数组按照次序排序
+  const test1 = ["赵同学", 18, "吃饭", "睡觉"];
+  const [姓名, 年龄, 吃饭, 睡觉, 打游戏] = test1; //如果左边的值比test1里的多，那多出来的是undefined  此时打游戏就是undefined
+  console.log(姓名, 年龄, 吃饭, 睡觉, 打游戏);
+</script>

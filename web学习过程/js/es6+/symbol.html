@@ -1,0 +1,36 @@
+<script>
+  //Symbol是原始数据类型 表示独一无二的值
+  // 原始数据类型都有 string number object boolean full undefined 和 symbol
+  //Symbol由函数生成
+  let symbol = Symbol(); //括号里面的叫描述
+  console.log(typeof symbol);
+
+  //Symbol的值 不是对象 所以不能添加属性  算是类似于字符串的数据类型
+  let s1 = Symbol("参数");
+  console.log(s1);
+
+  //如果 Symbol 的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后才生成一个 Symbol 值
+  const bat = {
+    toString() {
+      return "bat的值";
+    },
+  };
+  let s2 = Symbol(bat);
+  console.log(s2);
+
+  //Symbol不能参与运算，Symbol可以显式转换为 字符串 和 布尔值。 不能转换为数值
+  let sym = Symbol("Hello");
+  // console.log(sym + "world");  //会报错
+  // String(sym);     //结果"Hello"
+  // sym.toString();  //结果"Hello"
+  // Boolean(sym);    //结果true
+  //正常读取描述需要将Symbol显式转换为字符串
+  // String(sym);     //结果"Hello"
+  // sym.toString();  //结果"Hello"
+  // description可以代替上面的两种方法
+  console.log(sym.description);
+
+  //Object.defineProperty 
+  //将对象的属性名 指定为一个Symbol值
+  
+</script>

@@ -1,0 +1,108 @@
+<script>
+  //类的定义
+  //类  取值函数和存值函数 getter  setter
+  //类表达式
+  //类的继承  关键字extends
+  //类不存在变量提升
+  class test {
+    //实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）
+    constructor(x, y) {
+      //constructor是class类的默认方法，如果不写js也会默认添加
+      console.log(x, y);
+    }
+  }
+  //类调用必须用 new  不然会报错
+  let Test = new test(1, 2);
+
+  class Player {
+    constructor(name, age) {
+      this.name = name; //this直接指向类模版
+      this.age = age;
+    }
+    info() {
+      console.log(`${this.name}的年龄是${this.age}`); //这里${this.name} ${this.age}是引用模版的变量 调用需要加``
+    }
+    static show() {
+      //静态方法
+      console.log("这个我的信息");
+    }
+    get sex() {
+      return this._sex;
+    }
+    set sex(value) {
+      this._sex = value;
+    }
+  }
+  let player = new Player("赵同学", 18);
+  console.log(player.info());
+  console.log(Player.show()); //静态方法要直接用类名
+  console.log(player); //这里不出现sex 因为还没赋值
+  player.sex = "男"; //给sex赋值
+  console.log(player); //结果:name: "赵同学", age: 18, _sex: "男"
+
+  //类表达式
+  let person = class Me {
+    //这个类的名字是Me，但是Me只在 Class 的内部可用，指代当前类。在 Class 外部，这个类只能用MyClass引用。可以省略不写
+  };
+  //立即执行的类表达式
+  let Person = new (class {
+    constructor(name) {
+      this.name = name;
+    }
+
+    sayName() {
+      console.log(`名字是${this.name}`);
+    }
+  })("张三");
+  console.log(Person.sayName());
+
+  //继承
+  class car {
+    constructor(brand) {
+      this.brand = brand;
+    }
+    show() {
+      console.log(`车的品牌是${this.brand}`);
+    }
+  }
+  class Lexus extends car {
+    constructor(brand, lineup) {
+      super(brand); //调用父级的brand，super是从父级引用
+      this.lineup = lineup;
+    }
+    gerPrice() {
+      switch (this.lineup) {
+        case "a":
+          return 60;
+        case "b":
+          return 30;
+        default:
+          throw new Error("不详");
+      }
+    }
+  }
+  let mycar = new Lexus("Lexus", "a");
+  mycar.show();
+  console.log("价格是:", mycar.gerPrice(), "万");
+
+  class test1 {
+    constructor(value) {
+      this.value = value;
+    }
+    show() {
+      console.log(`value的值是${this.value}`);
+    }
+  }
+  class test2 extends test1 {
+    constructor(value, name) {
+      super(value);
+      this.name = name;
+    }
+    he() {
+      console.log(this.name + this.value);
+    }
+  }
+  let test3 = new test2(5, 10);
+  test3.show();
+  console.log(test3.he());
+</script>

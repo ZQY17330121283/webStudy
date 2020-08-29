@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+        background-color: #999;
+        overflow: hidden;
+      }
+      #game {
+        width: 550px;
+        height: 500px;
+        margin: 20px auto;
+        background-color: #f1f1f1;
+        position: relative;
+      }
+      .btn {
+        width: 500px;
+        margin: 0 auto;
+      }
+      .btn button {
+        width: 150px;
+        height: 40px;
+        font-size: 18px;
+      }
+      .brick {
+        width: 50px;
+        height: 20px;
+        /*background-color:#f00;*/
+        position: absolute;
+      }
+      #ball {
+        width: 20px;
+        height: 20px;
+        background-color: #0f0;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        box-shadow: 2px 2px 9px #ccc;
+      }
+      #guard {
+        width: 100px;
+        height: 10px;
+        background-color: palevioletred;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div id="game">
+        <!--游戏区域-->
+        <!--<div class="brick"></div>  <!-- 砖块 -->
+        <!--<div id="ball"></div>  <!--小球-->
+        <!--<div id="guard"></div>  <!--挡板-->
+      </div>
+      <div class="btn">
+        <button id="start">开始游戏</button>
+        <button id="reset">重置游戏</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    var gm = document.getElementById("game"); //获取游戏区域
+    var cols = 11; //排11列砖块
+    var rows = 5; //排5行砖块
+    var brick, bl, gd; //砖块，小球 挡板
+    var b_width = 50; //砖块的宽度
+    var b_height = 20; //砖块的高度
+    var st = document.getElementById("start");
+    var rt = document.getElementById("reset");
+    var timer;
+    var bricks = []; //盛放砖块的数组
+    var speedX = 5; //小球的水平速度
+    var speedY = -5; //小球的垂直速度
+    //		(function(){
+    //
+    //		})();
+    //游戏的初始化
+    var init = function () {
+      for (var i = 0; i < rows; i++) {
+        //行
+        for (var j = 0; j < cols; j++) {
+          //列
+          brick = document.createElement("div");
+          brick.className = "brick";
+          brick.style.left = j * b_width + "px"; //设置每一个砖块的left值
+          brick.style.top = i * b_height + "px"; //设置每一个砖块的top值
+          brick.style.backgroundColor = bgColor();
+          bricks.push(brick); //把创建的砖块添加到一个数组里
+          gm.appendChild(brick);
+        }
+      }
+      bl = document.createElement("div"); //创建小球
+      bl.id = "ball";
+      gm.appendChild(bl);
+      gd = document.createElement("div"); //创建挡板
+      gd.id = "guard";
+      gm.appendChild(gd);
+    };
+    init();
+    //随机颜色
+    function bgColor() {
+      var r = Math.floor(Math.random() * 256); //0-255
+      var g = Math.floor(Math.random() * 256); //0-255
+      var b = Math.floor(Math.random() * 256); //0-255
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+
+    //点击开始游戏
+    st.onclick = function () {
+      keyFlow(); //键盘移动
+      ballMove();
+      st.onclick = null;
+    };
+    //小球运动
+    var ballMove = function () {
+      timer = setInterval(function () {
+        var lf = bl.offsetLeft + speedX;
+        var tp = bl.offsetTop + speedY;
+
+        //球碰撞 砖块消失 球回来
+        for (var k = 0; k < bricks.length; k++) {
+          var bs = bricks[k];
+          if (
+            bs.offsetLeft <= bl.offsetLeft + bl.offsetWidth / 2 &&
+            bs.offsetLeft + bs.offsetWidth >=
+              bl.offsetLeft + bl.offsetWidth / 2 &&
+            bs.offsetTop + bs.offsetHeight >= bl.offsetTop
+          ) {
+            bs.style.display = "none";
+            speedY = 5;
+          }
+        }
+        if (lf < 0) {
+          //左边界
+          speedX = 5;
+        } else if (lf > gm.offsetWidth - bl.offsetWidth) {
+          //右边界
+          speedX = -5;
+        }
+
+        if (tp < 0) {
+          //上边界
+          speedY = 5;
+        } else if (
+          bl.offsetLeft + bl.offsetWidth / 2 >= gd.offsetLeft &&
+          bl.offsetLeft + bl.offsetWidth / 2 <=
+            gd.offsetLeft + gd.offsetWidth &&
+          bl.offsetTop + bl.offsetHeight >= gd.offsetTop
+        ) {
+          speedY = -5;
+        } else if (tp >= gm.offsetHeight - bl.offsetHeight) {
+          gameOver();
+        }
+
+        bl.style.left = lf + "px";
+        bl.style.top = tp + "px";
+      }, 20);
+    };
+    //游戏结束
+    function gameOver() {
+      clearInterval(timer);
+      //			alert("游戏结束");
+    }
+    //左右键  挡板运动
+    function keyFlow() {
+      document.onkeydown = function (ev) {
+        var e = ev || window.event;
+        //				keyCode //键码
+        //				alert(ev.keyCode)
+        if (e.keyCode == 37) {
+          //按左键
+          var lf = gd.offsetLeft - 30;
+          if (lf < 0) {
+            //挡板左边界判断
+            lf = 0;
+          }
+          gd.style.left = lf + "px";
+        } else if (e.keyCode == 39) {
+          //按右键
+          var lf = gd.offsetLeft + 30; //挡板右边界判断
+          if (lf > gm.offsetWidth - gd.offsetWidth) {
+            lf = gm.offsetWidth - gd.offsetWidth;
+          }
+          gd.style.left = lf + "px";
+        }
+      };
+    }
+
+    //重置游戏
+    rt.onclick = function () {
+      window.location.reload();
+    };
+  </script>
+</html>
