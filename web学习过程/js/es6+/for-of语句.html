@@ -1,0 +1,25 @@
+<script>
+  //Symbol.iterator属性，就被视为具有 iterator 接口，就可以用for...of循环遍历它的成员
+  //for...of循环可以使用的范围包括数组、Set 和 Map 结构、某些类似数组的对象（比如arguments对象、DOM NodeList 对象）、 Generator 对象，以及字符串。
+  //for...of循环本质上就是调用iterator接口产生的遍历器
+  let list = [10, 20, 30];
+  Array.prototype.Len = function () {};
+
+  for (let val of list) //只能取值
+    console.log(val);
+
+  for (let val in list) //for  in   带下标，拓展的数组也能取出
+    console.log(val, list[val]);
+
+  const arr = ["red", "green", "blue"];
+  for (let v of arr) {
+    console.log(v); // red green blue
+  }
+
+  const obj = {}; //对象默认没有iterator接口
+  obj[Symbol.iterator] = arr[Symbol.iterator].bind(arr); //obj[这样写给对象添加Symbol.iterator.
+
+  for (let v of obj) {
+    console.log(v); // red green blue
+  }
+</script>
